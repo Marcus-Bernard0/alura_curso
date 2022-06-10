@@ -1,0 +1,11 @@
+arquivo = open('frutas.txt', 'r')
+linha = arquivo.readline()
+print(linha)
+linha = arquivo.readline()
+print(linha)
+
+arquivo = open('frutas.txt','r')
+conteudo = arquivo.read()
+print(conteudo)
+conteudo = arquivo.read()
+print(conteudo)
