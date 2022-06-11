@@ -21,8 +21,9 @@ print("Essas exibições contém a variável na função e tenho que definir os 
 conta = Conta(20, "Marcus" , 500.54, 3000.00)
 conta2 = Conta(1, "Marley", 1000.00, 200000.00)
 
-print(f'Saldo conta 2: {conta2.saldo}')
-print(f'Esse é o saldo da conta 1: {conta.saldo}')
+#não usar mais assim, pois foi definido o metodo
+#print(f'Saldo conta 2: {conta2.__saldo}')
+#print(f'Esse é o saldo da conta 1: {conta.__saldo}')
 
 print('**********************')
 
@@ -36,3 +37,18 @@ conta2.extrato()
 conta2.sacar(520)
 #conferindo valor
 conta2.extrato()
+
+print("nova consulta antes da transferência")
+conta.extrato()
+conta2.extrato()
+
+print('**********************')
+print("Transferindo")
+
+conta.transferir(300, conta2)
+conta2.extrato()
+
+print("********************")
+
+conta2.get_saldo()
+
