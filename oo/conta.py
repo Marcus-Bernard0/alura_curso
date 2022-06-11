@@ -22,7 +22,8 @@ class Conta:
     def transferir(self, valor, destino):
         self.sacar(valor)
         destino.depositar(valor)
-    
+
+    #get usado para retornar
     def get_saldo (self):
         print(f"O saldo do titular {self.__titular} é {self.__saldo}")
         return self.__saldo
@@ -32,5 +33,14 @@ class Conta:
         return self.__titular
 
     def get_limite (self):
-        print(f"Seu limite é {self.__limite")
+        print(f"Seu limite é {self.__limite}")
         return self.__limite
+
+    #set usado para receber um novo valor
+    def set_limite(self, limite):
+        self.__limite = limite
+        print(f"Seu novo limite é {self.__limite}")
+
+    def set_titular(self, titular):
+        self.__titular = titular
+        print(f"O titular foi alterado com sucesso. O novo titular é {self.__titular}")
