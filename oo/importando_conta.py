@@ -51,10 +51,14 @@ conta2.extrato()
 print("********************")
 #usando get para obter valores
 
-conta2.get_saldo()
-conta2.get_limite()
+#conta2.get_saldo()
+#conta2.get_limite()
 
 #usando set para mudar limite
-conta2.set_limite(1200.00)
-conta2.set_titular("Gabriela")
-conta2.set_titular("Marleyzão")
+#conta2.set_limite(1200.00)
+#conta2.set_titular("Gabriela")
+#conta2.set_titular("Marleyzão")
+
+
+conta2.limite
+conta2.limite = 1300

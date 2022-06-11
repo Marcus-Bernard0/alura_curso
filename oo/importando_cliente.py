@@ -3,8 +3,10 @@ from cliente import Cliente
 
 #imprimimndo sem método
 cliente = Cliente("marcus")
-print(cliente.nome)
-cliente.get_nome()
+#print(cliente.nome)
+
+cliente.nome
+cliente.nome = "Maria"
 
 #criando método para definir primeira letra maiscula
 #cliente = Cliente("marley")

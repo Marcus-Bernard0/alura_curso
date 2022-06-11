@@ -32,14 +32,24 @@ class Conta:
         print(f"Essa conta é titular de {self.__titular}")
         return self.__titular
 
-    def get_limite (self):
+    @property
+    def limite (self):
         print(f"Seu limite é {self.__limite}")
         return self.__limite
 
-    #set usado para receber um novo valor
-    def set_limite(self, limite):
+    '''def get_limite (self):
+        print(f"Seu limite é {self.__limite}")
+        return self.__limite'''
+
+    @limite.setter
+    def limite(self, limite):
         self.__limite = limite
         print(f"Seu novo limite é {self.__limite}")
+    
+    #set usado para receber um novo valor
+    '''def set_limite(self, limite):
+        self.__limite = limite
+        print(f"Seu novo limite é {self.__limite}")'''
 
     def set_titular(self, titular):
         self.__titular = titular
