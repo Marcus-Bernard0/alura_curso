@@ -27,26 +27,26 @@ conta2 = Conta(1, "Marley", 1000.00, 200000.00)
 
 print('**********************')
 
-conta2.extrato()
+#conta2.extrato()
 
 #depositando na conta do Marley
-conta2.depositar(200)
+#conta2.depositar(200)
 #conferindo valor
-conta2.extrato()
+#conta2.extrato()
 #sacando na conta do Marley
-conta2.sacar(520)
+#conta2.sacar(520)
 #conferindo valor
-conta2.extrato()
+#conta2.extrato()
 
 print("nova consulta antes da transferência")
-conta.extrato()
-conta2.extrato()
+#conta.extrato()
+#conta2.extrato()
 
 print('**********************')
 print("Transferindo")
 
-conta.transferir(300, conta2)
-conta2.extrato()
+#conta.transferir(300, conta2)
+#conta2.extrato()
 
 print("********************")
 #usando get para obter valores
@@ -60,5 +60,11 @@ print("********************")
 #conta2.set_titular("Marleyzão")
 
 
-conta2.limite
-conta2.limite = 1300
+#conta2.limite
+#conta2.limite = 1300
+
+
+
+conta.saldo
+conta.sacar(100)
+conta.saldo
