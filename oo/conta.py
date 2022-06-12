@@ -76,3 +76,7 @@ class Conta:
     def set_titular(self, titular):
         self.__titular = titular
         print(f"O titular foi alterado com sucesso. O novo titular é {self.__titular}")
+
+    @staticmethod
+    def codigo_banco():
+        return '008'

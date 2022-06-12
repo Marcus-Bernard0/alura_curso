@@ -68,3 +68,7 @@ print("********************")
 conta.saldo
 conta.sacar(100)
 conta.saldo
+
+#exibindo método estático do código do banco
+codigo = (conta.codigo_banco())
+print(codigo)
