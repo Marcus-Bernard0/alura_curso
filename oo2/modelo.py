@@ -8,7 +8,7 @@ class Filme():
         self.duracao = duracao
 
 filme1 = Filme("batman", 2022, 300)
-print(f'O nome é {filme1.nome}.')
+print(f'O nome é {filme1.nome} lançado em {filme1.ano}')
     
 
 class Serie():
