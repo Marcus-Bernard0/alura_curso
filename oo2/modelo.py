@@ -57,5 +57,7 @@ print(
     f'O nome é {filme1.nome} lançado em {filme1.ano}. {filme1.likes} pessoas gostaram')
 
 serie1 = Serie("peak blinders", 2022, 6)
+#usando set para mudar nome
+serie1.nome = "Eu a patroa e as crianças"
 print(
     f'O nome é {serie1.nome}, lançada {serie1.temporada} temporadas, com a última em {serie1.ano}')
