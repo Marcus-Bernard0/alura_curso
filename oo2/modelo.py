@@ -51,14 +51,30 @@ class Serie(Programa):
    
 
 #atribuindo dados
-filme1 = Filme("batman das trevas", 2022, 300)
+filme1 = Filme("homem aranha - de volta para a casa", 2022, 300)
 
 # dando like no filme
 filme1.dar_likes()
-print(f'O nome é {filme1._nome} lançado em {filme1._ano}. {filme1._likes} pessoas gostaram')
+print(f'{filme1._nome} - {filme1._ano} - {filme1._likes} likes')
 
 
 serie1 = Serie("peak blinders", 2022, 6)
+
 #usando set para mudar nome
 serie1.nome = "Eu a patroa e as crianças"
-print(f'O nome é {serie1._nome}, lançada {serie1.temporada} temporadas, com a última em {serie1._ano}')
+serie1.dar_likes()
+serie1.dar_likes()
+print(f'{serie1._nome} - {serie1.temporada} - {serie1.likes} likes')
+
+print(50*'#')
+#criando uma lista e armazenando variáveis filme e serie
+filmes_e_series = [filme1, serie1]
+
+#polimorfismo, listas do mesmo tipo. Ou seja, filme e serie contém compartilham variáveis como
+#nome e likes
+print("Filmes contam com duração em minutos e série temporadas.")
+for programa in filmes_e_series:
+    #criando variável para imprimir especificade do filme ou serie (temporada, duracao)
+    detalhes = programa.duracao if hasattr(programa, 'duracao') else programa.temporada
+    
+    print(f'{programa._nome} - D {detalhes} - {programa.likes}')
