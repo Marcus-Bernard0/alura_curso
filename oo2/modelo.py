@@ -26,7 +26,7 @@ class Programa:
     #criando método para polimorfismo
      #def imprime(self):
         #print(f'{self._nome} - {self._ano} - {self.duracao} - {self._likes}')
-        
+
     def __str__(self):
         return f'{programa._nome} {programa.ano} {programa.likes}'
 
@@ -61,6 +61,16 @@ class Serie(Programa):
     def __str__(self):
        return f'{self._nome} - {self._ano} - {self.temporada} - {self._likes}'
 
+
+class Playlist:
+    def __init__(self, nome, programa):
+        self.nome = nome
+        self.programa = programa
+        
+    def tamanho(self, tamanho):
+        self.tamanho = len(tamanho)
+
+       
 
 #atribuindo dados
 filme1 = Filme("homem aranha - de volta para a casa", 2022, 300)
