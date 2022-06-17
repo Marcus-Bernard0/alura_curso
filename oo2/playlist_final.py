@@ -1,4 +1,4 @@
-#playlist final em construção, ver modelo
+#playlist final em construção, ver modelo.
 
 #criando classe mãe
 class Programa:
