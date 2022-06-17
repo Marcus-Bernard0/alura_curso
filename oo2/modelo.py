@@ -44,11 +44,7 @@ class Filme(Programa):
     #defindo o método com __str__
     
     def __str__(self):
-        return f'{self._nome} - {self._ano} - {self.duracao} - {self._likes}'
-
-    
-    
-
+        return f'{self._nome} - lançado em {self._ano} - {self.duracao} min - {self._likes} likes'
 
 class Serie(Programa):
     def __init__(self, nome, ano, temporada):
@@ -59,24 +55,32 @@ class Serie(Programa):
         #self._likes = 0
 
     def __str__(self):
-       return f'{self._nome} - {self._ano} - {self.temporada} - {self._likes}'
+       return f'{self._nome} - lançado em {self._ano} - {self.temporada} min - {self._likes} likes'
+
 
 
 class Playlist:
-    def __init__(self, nome, programa):
+    def __init__(self, nome, programas):
         self.nome = nome
-        self.programa = programa
+        self.programas = programas
         
-    def tamanho(self, tamanho):
+    #retorna quantidade de programas
+    def tamanho (self, tamanho):
         self.tamanho = len(tamanho)
 
        
 
 #atribuindo dados
 filme1 = Filme("homem aranha - de volta para a casa", 2022, 300)
+filme2 = Filme("velozes e furiosos", 2009, 160)
+filme3 = Filme("procurando nemo", 2009, 90)
 
-#dando like no filme
+print({filme2.nome})
+#dando like 
 filme1.dar_likes()
+filme2.dar_likes()
+filme2.dar_likes()
+filme2.dar_likes()
 #print(f'{filme1._nome} - {filme1._ano} - {filme1._likes} likes')
 
 
@@ -89,13 +93,19 @@ serie1.dar_likes()
 #print(f'{serie1._nome} - {serie1.temporada} - {serie1.likes} likes')
 
 print(26*'###')
+
 #criando uma lista e armazenando variáveis filme e serie
-filmes_e_series = [filme1, serie1]
+filmes_e_series = [filme1, serie1, filme2, filme3]
+
+playlist_fim_de_semana = Playlist('Fim de semana', filmes_e_series)
 
 #polimorfismo, listas do mesmo tipo. Ou seja, filme e serie contém compartilham variáveis como
 #nome e likes
-print("Filmes contam com duração em minutos e série temporadas.")
-for programa in filmes_e_series:
+mensagem = "Filmes contam com duração em minutos e série temporadas."
+mensagem = mensagem.upper()
+print(f'{mensagem} \n')
+
+for programa in playlist_fim_de_semana.programas:
     print(programa)
 
     #programa.imprime()
