@@ -17,30 +17,54 @@ class Programa:
 
     @property
     def nome(self):
-        return self.nome
+        return self._nome
     
     @nome.setter
     def nome(self, nome, novo_nome):
         self.nome = novo_nome()
+
+    def __str__(self):
+        return f'{programa.nome} {programa.ano} {programa.likes}'
+
+#criando playlist
+class Playlist:
+    def __init__(self, nome, programa):
+        self.nome = nome
+        self.programa = programa
+
+    def tamanho(self, tamanho):
+        self.tamanho = len(tamanho)
 
 class Filme(Programa):
     def __init__(self, nome, ano, duracao,):
         super().__init__(nome, ano)
         self.duracao = duracao
         
+    def __str__(self):
+        return f'{self._nome} lançada em {self._ano} {self.duracao} temporadas - {self._likes} likes'
        
         
 class Serie(Programa):
     def __init__(self, nome, ano, temporada):
         super().__init__(nome, ano)
-        self.duracao = temporada
-        
+        self.temporada = temporada
+    def __str__(self):
+        return f'{self._nome} lançada em {self._ano} - {self.temporada} temporadas - {self._likes} likes'  
 
 
+#inserindo dados no objeto
 filme1 = Filme("velozes e furiosos - rio", 200, 2022)
+filme2 = Filme("harry potter", 2009, 160)
+filme3 = Filme("procurando nemo", 2009, 90)
+
 #dando like no filme
 filme1.dar_likes()
-print(f'{filme1._nome} - likes: {filme1.likes}')
 
 serie1 = Serie('the walking dead', 2000, 6)
-       
+
+filmeseSeries = [filme1, filme2, filme3, serie1]
+
+playlistFimdeSemana = Playlist('fim de smana', filmeseSeries) 
+
+for programa in playlistFimdeSemana.programa:
+    print(programa)
