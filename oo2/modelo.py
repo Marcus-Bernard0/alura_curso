@@ -64,6 +64,9 @@ class Playlist:
         self._programas = programas
 
 
+    def __len__(self):
+        return len(self._programas)
+
      # método para transformar objeto em iterável
     def __getitem__(self, item):
         return self._programas[item]
@@ -112,7 +115,7 @@ mensagem = "Filmes contam com duração em minutos e série temporadas."
 mensagem = mensagem.upper()
 print(f'{mensagem} \n')
 
-print(f"Tamanho da playlist: {len(playlist_fim_de_semana.listagem)} programas")
+print(f"Essa playlist contém {len(playlist_fim_de_semana)} programas inéditos.")
 
 for programas in playlist_fim_de_semana.listagem:
     print(programas)
