@@ -28,7 +28,7 @@ class Programa:
         #print(f'{self._nome} - {self._ano} - {self.duracao} - {self._likes}')
 
     def __str__(self):
-        return f'{programa._nome} {programa.ano} {programa.likes}'
+        return f'{programas._nome} {programas.ano} {programas.likes}'
 
 
 class Filme(Programa):
@@ -63,13 +63,19 @@ class Playlist:
         self.nome = nome
         self._programas = programas
 
+
+     # método para transformar objeto em iterável
+    def __getitem__(self, item):
+        return self._programas[item]
+
     @property
-    def listagem (self):
+    def listagem(self):
         return self._programas
 
     @property
     def tamanho(self):
         return len(self._programas)
+
 
 # atribuindo dados
 filme1 = Filme("homem aranha - de volta para a casa", 2022, 300)
@@ -107,19 +113,23 @@ mensagem = mensagem.upper()
 print(f'{mensagem} \n')
 
 print(f"Tamanho da playlist: {len(playlist_fim_de_semana.listagem)} programas")
-for programa in playlist_fim_de_semana.listagem:
-    print(programa)
+
+for programas in playlist_fim_de_semana.listagem:
+    print(programas)
+
+
+
+
+
 
     # programa.imprime()
     # criando variável para imprimir especificade do filme ou serie (temporada, duracao)
     # foi criado um método na classe mãe para facilitar o polimorfismo, ou seja
     # quanto mais especificidade, mas if's seriam necessários
 
+   
+    '''detalhes = programa.duracao if hasattr(programa, 'duracao') else programa.temporada
+    print(f'{programa._nome} - D {detalhes} - {programa.likes}')
     '''
-    detalhes = programa.duracao if hasattr(programa, 'duracao') else programa.temporada
-    print(f'{programa._nome} - D {detalhes} - {programa.likes}')'''
 
-
-#verificando se tem certo filme ou série na playlist
-
-
+# verificando se tem certo filme ou série na playlist
