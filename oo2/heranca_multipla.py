@@ -18,3 +18,19 @@ class Alura(Funcionario):
 
     def busca_perguntas_sem_resposta(self):
         print('Mostrando perguntas não respondidas do fórum')
+    
+class Junior(Alura):
+    pass
+
+class Pleno(Alura, Caelum):
+    pass
+
+
+#problema: Todos funcionários só estáo atribuidos a Alura
+#criando junior
+joao = Junior()
+joao.busca_perguntas_sem_resposta()
+
+#criando funcionário pleno
+brendom = Pleno()
+brendom.mostrar_tarefas()
