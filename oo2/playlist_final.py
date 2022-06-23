@@ -1,6 +1,10 @@
 #playlist final em construção, ver modelo.
 
 #criando classe mãe
+from msilib.schema import Property
+from pickletools import read_unicodestring1
+
+
 class Programa:
     def __init__(self, nome, ano,):
         self._nome = nome.title() 
@@ -24,16 +28,20 @@ class Programa:
         self.nome = novo_nome()
 
     def __str__(self):
-        return f'{programa.nome} {programa.ano} {programa.likes}'
+        return f'{programas._nome} {programas.ano} {programas.likes}'
 
 #criando playlist
 class Playlist:
-    def __init__(self, nome, programa):
+    def __init__(self, nome, programas):
         self.nome = nome
-        self.programa = programa
+        self._programas = programas
 
-    def tamanho(self, tamanho):
-        self.tamanho = len(tamanho)
+    @property
+    def listagem(self):
+        return self._programas
+    @property
+    def tamanho(self):
+        return len(self._programas)
 
 class Filme(Programa):
     def __init__(self, nome, ano, duracao,):
@@ -66,5 +74,8 @@ filmeseSeries = [filme1, filme2, filme3, serie1]
 
 playlistFimdeSemana = Playlist('fim de smana', filmeseSeries) 
 
-for programa in playlistFimdeSemana.programa:
-    print(programa)
+mensagem = "Filmes contam com duração em minutos e série em temporadas. "
+print(f'{mensagem} \n')
+
+for programas in playlistFimdeSemana.listagem:
+    print(programas)
