@@ -1,4 +1,4 @@
-url = 'bytebank.com/cambio?moedaOrigem=real'
+url = 'https//bytebank.com/cambio?moedaOrigem=real'
 print(url)
 
 
@@ -8,9 +8,33 @@ print(texto[0])
 
 print(texto[0:2])'''
 
-url_base = url[0:19]
-url_parametros = url[20:36]
+#método find para exibir posição
+'''texto = 'abcde'
+encontrando = texto.find('b')
+print(encontrando)'''
+
+
+
+
+indice_interrogacao = url.find('?')
+print(indice_interrogacao)
+
+#deixando o código mais dinâmico
+url_base = url[:indice_interrogacao]
 print(url_base)
+
+url_parametros = url[indice_interrogacao + 1:]
 print(url_parametros)
 
+#extraindo a moeda
+parametro = ('moedaOrigem')
+parametro_busca =  url.find('moedaOrigem')
+print(parametro_busca)
 
+#obtendo o tamanho do parametro
+tamanho_parametro = len(parametro)
+print(tamanho_parametro)
+
+#formula para extrair o a modeda após o =
+indice_valor = parametro_busca + tamanho_parametro + 1
+print(indice_valor)
