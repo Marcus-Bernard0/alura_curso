@@ -1,8 +1,7 @@
 #playlist final em construção, ver modelo.
 
 #criando classe mãe
-from msilib.schema import Property
-from pickletools import read_unicodestring1
+
 
 
 class Programa:
