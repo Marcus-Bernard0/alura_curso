@@ -49,10 +49,18 @@ class ExtratorURL:
     #imprimindo a url
     def __str__(self):
         return f"{self.url} \nParametros: {self.get_url_parametros()} \nURL base: {self.get_url_base()}"
+    
+    #comprando duas variáveis 
+    def __eq__(self, other):
+        return self.url == other.url
+        
 
 url = "bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar"
 extrator_url = ExtratorURL(url)
-print(f" Tamanho da URL: {len(extrator_url)}")
+extrator_url2 = ExtratorURL(url)
+print(extrator_url==extrator_url2)
+
+print(f"Tamanho da URL: {len(extrator_url)}")
 print(extrator_url)
 '''valor_quantidade = extrator_url.get_valor_parametro("Origem")
 print(valor_quantidade)'''
