@@ -50,7 +50,7 @@ class ExtratorURL:
     def __str__(self):
         return f"{self.url} \nParametros: {self.get_url_parametros()} \nURL base: {self.get_url_base()}"
     
-    #comprando duas variáveis 
+    #comprando duas variáveis
     def __eq__(self, other):
         return self.url == other.url
         
