@@ -12,7 +12,7 @@ class ContaCorrente:
     def deposita_em_todas(contas):
         for conta in contas:
             conta.deposita(100)
-            contas = [conta_marcus, conta_gabi, conta_marcus]
+            
 
 
 conta_marcus = ContaCorrente(25)
