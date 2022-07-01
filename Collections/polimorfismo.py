@@ -2,24 +2,29 @@ import array as arr
 import numpy as np
 
 
-class Conta:
+class ContaSalario:
     def __init__(self, codigo):
         self._codigo = codigo
         self._saldo = 0
 
+    def __eq__(self, outro):
+        if type(outro) != ContaSalario:
+            return self._codigo == outro._codigo and self.saldo == outro._saldo
+
     def deposita(self, valor):
         self._saldo += valor
+
     
     def __str__(self):
         return f"Código {self._codigo} saldo R$ {self._saldo}"
 
 
 
-class contaCorrente(Conta):
+class contaCorrente(ContaSalario):
     def passa_o_mes(self):
         self._saldo -=2
 
-class contaPoupanca(Conta):
+class contaPoupanca(ContaSalario):
     def passa_o_mes(self):
         self._saldo *=1.01
         self._saldo -=3
@@ -48,3 +53,5 @@ print(arrayTrue)
 
 arraynp = np.array([1,3.5])
 print(arraynp)
+
+print(isinstance(contaPoupanca(17), ContaSalario))
