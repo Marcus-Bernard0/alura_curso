@@ -1,7 +1,8 @@
 import array as arr
 import numpy as np
+from functools import total_ordering
 
-
+@total_ordering
 class ContaSalario:
     def __init__(self, codigo):
         self._codigo = codigo
@@ -10,6 +11,9 @@ class ContaSalario:
     def __eq__(self, outro):
         if type(outro) != ContaSalario:
             return self._codigo == outro._codigo and self.saldo == outro._saldo
+
+    def __lt__(self,outro):
+        return self._saldo < outro._saldo
 
     def deposita(self, valor):
         self._saldo += valor

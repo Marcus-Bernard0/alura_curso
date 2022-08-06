@@ -22,10 +22,6 @@ class ExtratorURL:
         if not match:
             raise ValueError("A URL não é válida.")
 
-    def get_url_base(self):
-        indice_interrogacao = self.url.find('?')
-        url_base = self.url[:indice_interrogacao]
-        return url_base
     
     def get_url_parametros(self):
         indice_interrogacao = self.url.find('?')
